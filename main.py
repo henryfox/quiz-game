@@ -116,5 +116,7 @@ while run == False:
 					if answer == easy_aswers["lvl%s" % lvl][blank - 1]:
 						user_answers_easy["lvl%s" % lvl].append({str(blank): answer})
 						easy_sentences[lvl - 1] = easy_sentences[lvl - 1].replace("{%s}" % blank, easy_aswers["lvl%s" % lvl][blank - 1])
+						os.system("clear")
+						print easy_sentences[lvl - 1]
 						break
 			os.system("clear")
