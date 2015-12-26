@@ -35,7 +35,9 @@ lvl3_easy = """
 #correct answers
 lvl3_easy_answers = ["organize", "logical", "page", "footer"]
 
-easy_aswers = {"lvl1": lvl1_easy_answers,"lvl2": lvl2_easy_answers, "lvl3", lvl3_easy_answers}
+easy_aswers = {"lvl1": lvl1_easy_answers,"lvl2": lvl2_easy_answers, "lvl3": lvl3_easy_answers}
+
+easy_sentences = [lvl1_easy, lvl2_easy, lvl3_easy]
 
 #lvl 1 mediam mode
 #sentince
@@ -104,5 +106,15 @@ while run == False:
 	if game_mode == "e":
 		run = True
 		for lvl in range(1, 4):
-			for blank in range(1,5)
-				user_answers_easy["lvl%s" % lvl].append({str(blank): raw_input("what is your answer for blank %s: " % blank)})
+			print  easy_sentences[lvl - 1]
+			for blank in range(1, 5):
+				while True:
+					answer = raw_input("what is your answer for blank %s: " % blank)
+					print easy_aswers["lvl%s" % lvl][blank -1]
+					print user_answers_easy["lvl%s" % lvl]
+					print blank
+					if answer == easy_aswers["lvl%s" % lvl][blank - 1]:
+						user_answers_easy["lvl%s" % lvl].append({str(blank): answer})
+						easy_sentences[lvl - 1] = easy_sentences[lvl - 1].replace("{%s}" % blank, easy_aswers["lvl%s" % lvl][blank - 1])
+						break
+			os.system("clear")
