@@ -122,7 +122,6 @@ def check_blanks(game_mode_name, number_of_blanks):
 		for blank in range(1, number_of_blanks + 1):
 			while True:
 				answer = raw_input("what is your answer for blank %s: " % blank)
-				print all_data[game_mode_name]["answers"]["lvl%s" % lvl][blank - 1]
 				if answer == all_data[game_mode_name]["answers"]["lvl%s" % lvl][blank - 1]:
 					user_answers["lvl%s" % lvl].append({str(blank): answer})
 					all_data[game_mode_name]["sentences"][lvl - 1] = all_data[game_mode_name]["sentences"][lvl - 1].replace("{%s}" % blank, all_data[game_mode_name]["answers"]["lvl%s" % lvl][blank - 1])
