@@ -128,6 +128,7 @@ while run == False:
 						print easy_sentences[lvl - 1]
 						break
 			os.system("clear")
+			print "good job you beat the game on easy mode"
 
 	if game_mode == "m":
 		run = True
@@ -146,6 +147,7 @@ while run == False:
 						print mediam_sentences[lvl - 1]
 						break
 			os.system("clear")
+			print "good job you beat the game on medium mode"
 
 	if game_mode == "h":
 		run = True
@@ -164,3 +166,4 @@ while run == False:
 						print hard_sentences[lvl - 1]
 						break
 			os.system("clear")
+			print "good job you beat the game on hard mode"
