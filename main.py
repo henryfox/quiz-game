@@ -75,6 +75,7 @@ mediam_answers = {"lvl1": lvl1_mediam_answers,"lvl2": lvl2_mediam_answers, "lvl3
 mediam_sentences = [lvl1_mediam, lvl2_mediam, lvl3_mediam]
 
 #lvl 1 hard mode
+user_answers_hard={"lvl1":[], "lvl2":[], "lvl3":[]}
 #sentince
 lvl1_hard = """
 	Basic {1} are the backbone of any HTML document.
@@ -103,6 +104,12 @@ lvl3_hard = """
 """
 #correct answers
 lvl3_hard_answers = ["organize", "logical", "page", "footer", "identify", "content"]
+
+hard_answers = {"lvl1": lvl1_hard_answers,"lvl2": lvl2_hard_answers, "lvl3": lvl3_hard_answers}
+
+hard_sentences = [lvl1_hard, lvl2_hard, lvl3_hard]
+
+#cod that makes evrything work
 
 while run == False:
 	game_mode = raw_input("type your game mode hear e m h: ")
@@ -137,5 +144,23 @@ while run == False:
 						mediam_sentences[lvl - 1] = mediam_sentences[lvl - 1].replace("{%s}" % blank, mediam_answers["lvl%s" % lvl][blank - 1])
 						os.system("clear")
 						print mediam_sentences[lvl - 1]
+						break
+			os.system("clear")
+
+	if game_mode == "h":
+		run = True
+		for lvl in range(1, 4):
+			print  hard_sentences[lvl - 1]
+			for blank in range(1, 7):
+				while True:
+					answer = raw_input("what is your answer for blank %s: " % blank)
+					print hard_answers["lvl%s" % lvl][blank -1]
+					print user_answers_hard["lvl%s" % lvl]
+					print blank
+					if answer == hard_answers["lvl%s" % lvl][blank - 1]:
+						user_answers_hard["lvl%s" % lvl].append({str(blank): answer})
+						hard_sentences[lvl - 1] = hard_sentences[lvl - 1].replace("{%s}" % blank, hard_answers["lvl%s" % lvl][blank - 1])
+						os.system("clear")
+						print hard_sentences[lvl - 1]
 						break
 			os.system("clear")
