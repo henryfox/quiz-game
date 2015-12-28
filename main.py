@@ -114,6 +114,7 @@ all_data = {"easy":{"answers": easy_answers,"sentences":easy_sentences}, "medium
 #code that makes evrything work
 
 def check_blanks(game_mode_name, number_of_blanks):
+	#this function goes threw each level and each blank on that level and check if thay are right then edits the sentince to show them if they are
 	os.system("clear")
 	run = True
 	for lvl in range(1, 4):
